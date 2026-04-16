@@ -125,5 +125,10 @@ namespace seatwork2
         {
             Application.Exit();
         }
+
+        private void textBoxDisplay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -43,20 +43,23 @@ namespace seatwork2
             // textBoxDisplay
             // 
             textBoxDisplay.Font = new Font("Microsoft YaHei UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDisplay.Location = new Point(12, 12);
+            textBoxDisplay.Location = new Point(15, 14);
+            textBoxDisplay.Margin = new Padding(4, 4, 4, 4);
             textBoxDisplay.Name = "textBoxDisplay";
             textBoxDisplay.ReadOnly = true;
-            textBoxDisplay.Size = new Size(330, 46);
+            textBoxDisplay.Size = new Size(402, 53);
             textBoxDisplay.TabIndex = 0;
             textBoxDisplay.Text = "0";
             textBoxDisplay.TextAlign = HorizontalAlignment.Right;
+            textBoxDisplay.TextChanged += textBoxDisplay_TextChanged;
             // 
             // button7
             // 
             button7.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button7.Location = new Point(12, 70);
+            button7.Location = new Point(15, 84);
+            button7.Margin = new Padding(4, 4, 4, 4);
             button7.Name = "button7";
-            button7.Size = new Size(75, 50);
+            button7.Size = new Size(92, 60);
             button7.TabIndex = 1;
             button7.Text = "7";
             button7.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@ namespace seatwork2
             // button8
             // 
             button8.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button8.Location = new Point(97, 70);
+            button8.Location = new Point(119, 84);
+            button8.Margin = new Padding(4, 4, 4, 4);
             button8.Name = "button8";
-            button8.Size = new Size(75, 50);
+            button8.Size = new Size(92, 60);
             button8.TabIndex = 2;
             button8.Text = "8";
             button8.UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@ namespace seatwork2
             // button9
             // 
             button9.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button9.Location = new Point(182, 70);
+            button9.Location = new Point(222, 84);
+            button9.Margin = new Padding(4, 4, 4, 4);
             button9.Name = "button9";
-            button9.Size = new Size(75, 50);
+            button9.Size = new Size(92, 60);
             button9.TabIndex = 3;
             button9.Text = "9";
             button9.UseVisualStyleBackColor = true;
@@ -87,9 +92,10 @@ namespace seatwork2
             // buttonDivide
             // 
             buttonDivide.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonDivide.Location = new Point(267, 70);
+            buttonDivide.Location = new Point(326, 84);
+            buttonDivide.Margin = new Padding(4, 4, 4, 4);
             buttonDivide.Name = "buttonDivide";
-            buttonDivide.Size = new Size(75, 50);
+            buttonDivide.Size = new Size(92, 60);
             buttonDivide.TabIndex = 4;
             buttonDivide.Text = "/";
             buttonDivide.UseVisualStyleBackColor = true;
@@ -98,9 +104,10 @@ namespace seatwork2
             // button4
             // 
             button4.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(12, 130);
+            button4.Location = new Point(15, 156);
+            button4.Margin = new Padding(4, 4, 4, 4);
             button4.Name = "button4";
-            button4.Size = new Size(75, 50);
+            button4.Size = new Size(92, 60);
             button4.TabIndex = 5;
             button4.Text = "4";
             button4.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@ namespace seatwork2
             // button5
             // 
             button5.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button5.Location = new Point(97, 130);
+            button5.Location = new Point(119, 156);
+            button5.Margin = new Padding(4, 4, 4, 4);
             button5.Name = "button5";
-            button5.Size = new Size(75, 50);
+            button5.Size = new Size(92, 60);
             button5.TabIndex = 6;
             button5.Text = "5";
             button5.UseVisualStyleBackColor = true;
@@ -120,9 +128,10 @@ namespace seatwork2
             // button6
             // 
             button6.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button6.Location = new Point(182, 130);
+            button6.Location = new Point(222, 156);
+            button6.Margin = new Padding(4, 4, 4, 4);
             button6.Name = "button6";
-            button6.Size = new Size(75, 50);
+            button6.Size = new Size(92, 60);
             button6.TabIndex = 7;
             button6.Text = "6";
             button6.UseVisualStyleBackColor = true;
@@ -131,9 +140,10 @@ namespace seatwork2
             // buttonMultiply
             // 
             buttonMultiply.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonMultiply.Location = new Point(267, 130);
+            buttonMultiply.Location = new Point(326, 156);
+            buttonMultiply.Margin = new Padding(4, 4, 4, 4);
             buttonMultiply.Name = "buttonMultiply";
-            buttonMultiply.Size = new Size(75, 50);
+            buttonMultiply.Size = new Size(92, 60);
             buttonMultiply.TabIndex = 8;
             buttonMultiply.Text = "*";
             buttonMultiply.UseVisualStyleBackColor = true;
@@ -142,9 +152,10 @@ namespace seatwork2
             // button1
             // 
             button1.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(12, 190);
+            button1.Location = new Point(15, 228);
+            button1.Margin = new Padding(4, 4, 4, 4);
             button1.Name = "button1";
-            button1.Size = new Size(75, 50);
+            button1.Size = new Size(92, 60);
             button1.TabIndex = 9;
             button1.Text = "1";
             button1.UseVisualStyleBackColor = true;
@@ -153,9 +164,10 @@ namespace seatwork2
             // button2
             // 
             button2.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(97, 190);
+            button2.Location = new Point(119, 228);
+            button2.Margin = new Padding(4, 4, 4, 4);
             button2.Name = "button2";
-            button2.Size = new Size(75, 50);
+            button2.Size = new Size(92, 60);
             button2.TabIndex = 10;
             button2.Text = "2";
             button2.UseVisualStyleBackColor = true;
@@ -164,9 +176,10 @@ namespace seatwork2
             // button3
             // 
             button3.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(182, 190);
+            button3.Location = new Point(222, 228);
+            button3.Margin = new Padding(4, 4, 4, 4);
             button3.Name = "button3";
-            button3.Size = new Size(75, 50);
+            button3.Size = new Size(92, 60);
             button3.TabIndex = 11;
             button3.Text = "3";
             button3.UseVisualStyleBackColor = true;
@@ -175,9 +188,10 @@ namespace seatwork2
             // buttonSubtract
             // 
             buttonSubtract.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonSubtract.Location = new Point(267, 190);
+            buttonSubtract.Location = new Point(326, 228);
+            buttonSubtract.Margin = new Padding(4, 4, 4, 4);
             buttonSubtract.Name = "buttonSubtract";
-            buttonSubtract.Size = new Size(75, 50);
+            buttonSubtract.Size = new Size(92, 60);
             buttonSubtract.TabIndex = 12;
             buttonSubtract.Text = "-";
             buttonSubtract.UseVisualStyleBackColor = true;
@@ -186,9 +200,10 @@ namespace seatwork2
             // button0
             // 
             button0.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button0.Location = new Point(12, 250);
+            button0.Location = new Point(15, 300);
+            button0.Margin = new Padding(4, 4, 4, 4);
             button0.Name = "button0";
-            button0.Size = new Size(75, 50);
+            button0.Size = new Size(92, 60);
             button0.TabIndex = 13;
             button0.Text = "0";
             button0.UseVisualStyleBackColor = true;
@@ -197,9 +212,10 @@ namespace seatwork2
             // buttonDecimal
             // 
             buttonDecimal.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonDecimal.Location = new Point(97, 250);
+            buttonDecimal.Location = new Point(119, 300);
+            buttonDecimal.Margin = new Padding(4, 4, 4, 4);
             buttonDecimal.Name = "buttonDecimal";
-            buttonDecimal.Size = new Size(75, 50);
+            buttonDecimal.Size = new Size(92, 60);
             buttonDecimal.TabIndex = 14;
             buttonDecimal.Text = ".";
             buttonDecimal.UseVisualStyleBackColor = true;
@@ -208,9 +224,10 @@ namespace seatwork2
             // buttonEquals
             // 
             buttonEquals.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonEquals.Location = new Point(182, 250);
+            buttonEquals.Location = new Point(222, 300);
+            buttonEquals.Margin = new Padding(4, 4, 4, 4);
             buttonEquals.Name = "buttonEquals";
-            buttonEquals.Size = new Size(75, 50);
+            buttonEquals.Size = new Size(92, 60);
             buttonEquals.TabIndex = 15;
             buttonEquals.Text = "=";
             buttonEquals.UseVisualStyleBackColor = true;
@@ -219,9 +236,10 @@ namespace seatwork2
             // buttonAdd
             // 
             buttonAdd.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonAdd.Location = new Point(267, 250);
+            buttonAdd.Location = new Point(326, 300);
+            buttonAdd.Margin = new Padding(4, 4, 4, 4);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(75, 50);
+            buttonAdd.Size = new Size(92, 60);
             buttonAdd.TabIndex = 16;
             buttonAdd.Text = "+";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -230,9 +248,10 @@ namespace seatwork2
             // buttonClear
             // 
             buttonClear.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonClear.Location = new Point(12, 310);
+            buttonClear.Location = new Point(15, 372);
+            buttonClear.Margin = new Padding(4, 4, 4, 4);
             buttonClear.Name = "buttonClear";
-            buttonClear.Size = new Size(75, 50);
+            buttonClear.Size = new Size(92, 60);
             buttonClear.TabIndex = 17;
             buttonClear.Text = "C";
             buttonClear.UseVisualStyleBackColor = true;
@@ -241,9 +260,10 @@ namespace seatwork2
             // buttonBackspace
             // 
             buttonBackspace.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonBackspace.Location = new Point(97, 310);
+            buttonBackspace.Location = new Point(119, 372);
+            buttonBackspace.Margin = new Padding(4, 4, 4, 4);
             buttonBackspace.Name = "buttonBackspace";
-            buttonBackspace.Size = new Size(75, 50);
+            buttonBackspace.Size = new Size(92, 60);
             buttonBackspace.TabIndex = 18;
             buttonBackspace.Text = "←";
             buttonBackspace.UseVisualStyleBackColor = true;
@@ -252,9 +272,10 @@ namespace seatwork2
             // buttonSign
             // 
             buttonSign.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonSign.Location = new Point(182, 310);
+            buttonSign.Location = new Point(222, 372);
+            buttonSign.Margin = new Padding(4, 4, 4, 4);
             buttonSign.Name = "buttonSign";
-            buttonSign.Size = new Size(75, 50);
+            buttonSign.Size = new Size(92, 60);
             buttonSign.TabIndex = 19;
             buttonSign.Text = "±";
             buttonSign.UseVisualStyleBackColor = true;
@@ -263,9 +284,10 @@ namespace seatwork2
             // buttonExit
             // 
             buttonExit.Font = new Font("Microsoft YaHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonExit.Location = new Point(267, 310);
+            buttonExit.Location = new Point(326, 372);
+            buttonExit.Margin = new Padding(4, 4, 4, 4);
             buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(75, 50);
+            buttonExit.Size = new Size(92, 60);
             buttonExit.TabIndex = 20;
             buttonExit.Text = "退出";
             buttonExit.UseVisualStyleBackColor = true;
@@ -273,9 +295,9 @@ namespace seatwork2
             // 
             // CalculatorForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(354, 372);
+            ClientSize = new Size(433, 446);
             Controls.Add(buttonExit);
             Controls.Add(buttonSign);
             Controls.Add(buttonBackspace);
@@ -297,6 +319,7 @@ namespace seatwork2
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(textBoxDisplay);
+            Margin = new Padding(4, 4, 4, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "CalculatorForm";
