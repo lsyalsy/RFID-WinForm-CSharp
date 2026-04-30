@@ -187,5 +187,92 @@ namespace seatwork3
                 return false;
             }
         }
+
+        // 检查学号是否存在
+        public bool IsStudentIdExists(int id)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+                    
+                    string query = "SELECT COUNT(*) FROM STUDENT WHERE ID = @id";
+                    
+                    using (var command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"检查学号时出错: {ex.Message}");
+                return false;
+            }
+        }
+
+        // 修改学号（如果新学号不存在）
+        public bool UpdateStudentId(int oldId, int newId)
+        {
+            try
+            {
+                // 检查新学号是否已存在
+                if (IsStudentIdExists(newId))
+                {
+                    MessageBox.Show($"学号 {newId} 已存在，无法修改！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                using (var connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+                    
+                    // 使用事务确保数据一致性
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            // 先插入新记录
+                            string insertQuery = @"
+                                INSERT INTO STUDENT (ID, NAME, RFIDNUM, YUE) 
+                                SELECT @newId, NAME, RFIDNUM, YUE FROM STUDENT WHERE ID = @oldId";
+                            
+                            using (var insertCommand = new SQLiteCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@newId", newId);
+                                insertCommand.Parameters.AddWithValue("@oldId", oldId);
+                                insertCommand.ExecuteNonQuery();
+                            }
+
+                            // 删除旧记录
+                            string deleteQuery = "DELETE FROM STUDENT WHERE ID = @oldId";
+                            
+                            using (var deleteCommand = new SQLiteCommand(deleteQuery, connection))
+                            {
+                                deleteCommand.Parameters.AddWithValue("@oldId", oldId);
+                                deleteCommand.ExecuteNonQuery();
+                            }
+
+                            transaction.Commit();
+                            return true;
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"修改学号时出错: {ex.Message}");
+                return false;
+            }
+        }
     }
 }

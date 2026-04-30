@@ -45,15 +45,53 @@ namespace seatwork3
             int rfidNum = int.Parse(txtRfidNum.Text.Trim());
             int yue = int.Parse(txtYue.Text.Trim());
 
-            if (dbManager.UpdateStudent(id, name, rfidNum, yue))
+            // 检查是否需要修改学号
+            // 获取当前选中的行（如果有）
+            int oldId = -1;
+            if (dataGridView.SelectedRows.Count > 0)
             {
-                MessageBox.Show("学生信息更新成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearInputs();
-                LoadAllStudents();
+                DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+                if (selectedRow.Cells["ID"].Value != null)
+                {
+                    oldId = int.Parse(selectedRow.Cells["ID"].Value.ToString());
+                }
+            }
+
+            // 如果学号发生了变化
+            if (oldId != -1 && oldId != id)
+            {
+                // 询问用户是否要修改学号
+                DialogResult result = MessageBox.Show(
+                    $"您将学号从 {oldId} 修改为 {id}\n是否继续？",
+                    "确认修改学号",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // 调用修改学号的方法
+                    if (dbManager.UpdateStudentId(oldId, id))
+                    {
+                        MessageBox.Show("学号修改成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearInputs();
+                        LoadAllStudents();
+                    }
+                    // 如果失败，UpdateStudentId方法内部会显示错误消息
+                }
             }
             else
             {
-                MessageBox.Show("更新失败，可能该学号的学生不存在！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // 学号没有变化，只更新其他信息
+                if (dbManager.UpdateStudent(id, name, rfidNum, yue))
+                {
+                    MessageBox.Show("学生信息更新成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearInputs();
+                    LoadAllStudents();
+                }
+                else
+                {
+                    MessageBox.Show("更新失败，可能该学号的学生不存在！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
