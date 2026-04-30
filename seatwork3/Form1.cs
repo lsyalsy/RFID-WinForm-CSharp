@@ -134,7 +134,7 @@ namespace seatwork3
             int id = int.Parse(txtId.Text.Trim());
             DataTable dt = dbManager.GetStudentById(id);
 
-            if (dt.Rows.Count > 0)
+            if (dt.Rows.Count > 0) 
             {
                 dataGridView.DataSource = dt;
                 MessageBox.Show($"找到学号为 {id} 的学生信息！", "查询结果", MessageBoxButtons.OK, MessageBoxIcon.Information);
